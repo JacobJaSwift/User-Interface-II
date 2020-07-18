@@ -1,0 +1,114 @@
+/*CSS RESET*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+}
+
+p {
+  text-align: center;
+}
+
+/* NAVBAR STUFF VERRRY IMPORTANT*/
+.flex-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-nav > li {
+  padding: 10px;
+  background-color: darkslategray;
+  margin: 10px;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.flex-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.flex-nav li:hover {
+  background-color: darkslateblue;
+}
+/* End 0' Navbar Almighty*/
+
+
+
+
+.flex-gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: auto;
+  }
+  
+.flex-gallery > div {
+    background-color: #f1f1f1;
+    margin: 50px;
+    width: 20vw;
+    height: 40vh;
+    font-size: 30px;
+  }
+
+  .flex-header {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    margin: auto;
+    margin-top: 30px;
+    background-image: url("https://cdn.pling.com/img/6/0/c/8/17611381a69ce2051dcfb4205756d12decc1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+
+  }
+
+  .flex-header > div {
+    width: 60vw;
+    height: 50vh;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: 6rem;
+    color: white;
+    align-items: center;
+  }
+  
+
+  .flex-header button {
+    background-color: white;
+    padding: 40px;
+    margin: 30px;
+    border-radius: 10px;
+  }
+
+  .flex-header button:hover {
+    background-color: darkslateblue;
+    padding: 50px;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  .flex-footer {
+    display: flex;
+    background-color: darkslategray;
+    justify-content: center;
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  .flex-footer > button {
+    background-color: white;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+  }
