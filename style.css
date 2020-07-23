@@ -5,8 +5,25 @@
   margin: 0;
 }
 
+/*Animations*/
+@keyframes example {
+  0%   {background-color:slateblue left:0px; top:0px; padding: 20px; box-shadow: 5px 5px 5px darkgrey;}
+  25%  {background-color:slategrey; left:200px; top:0px;}
+  50%  {background-color:slategray; left:200px; top:200px;}
+  75%  {background-color:slateblue; left:0px; top:200px;}
+  100% {background-color:slateblue; left:0px; top:0px;}
+}
+
+@keyframes buttonhover {
+  0%   {background-color:top:0px; padding: 60%; opacity: 20%; font-size:5rem;}
+  50%  {background-color:slategrey; opacity: 50%; left:200px; top:0px;}
+  100%  {background-color:slategray; left:200px; top:200px;}
+}
+
+/*Universal tags*/
 body {
   font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -14,7 +31,17 @@ p {
   text-align: center;
 }
 
-/* NAVBAR STUFF VERRRY IMPORTANT*/
+a {
+  text-decoration: none;
+  color: black;
+}
+/*End 0' Universal tags*/
+
+.mobileContent {
+  display: none;
+}
+
+/* NAVBAR*/
 .flex-nav {
   display: flex;
   justify-content: flex-end;
@@ -26,6 +53,8 @@ p {
   margin: 10px;
   list-style: none;
   border-radius: 5px;
+  animation-name: example;
+  animation-duration: 4s;
 }
 
 .flex-nav a {
@@ -35,80 +64,289 @@ p {
 
 .flex-nav li:hover {
   background-color: darkslateblue;
+  
 }
+.flex-nav .mobileContent{
+  display: none;
+
+}
+
 /* End 0' Navbar Almighty*/
+/*Header*/
 
+.headerWrapper .mobileHeaderDisplay {
+  display: none;
+  margin-top: 5px;
+  color: black;
+}
+.headerWrapper .mobileHeaderDisplay p {
+  font-size: 3.5rem;
+}
+.flex-header {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 30vw;
+  margin: auto;
+  margin-top: 30px;
+  background-image: url("https://cdn.pling.com/img/6/0/c/8/17611381a69ce2051dcfb4205756d12decc1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px grey;
+}
 
+.flex-header div p {
+  font-size: 5.5rem;
+  color: white;
+  font-weight: 900;
+}
+.flex-header button {
+  background-color: white;
+  padding: 3vw;
+  border-radius: 10px;
+  display: inline-block;
+  border-style: none;
+  box-shadow: 5px 5px 5px grey;
+}
+.flex-header button:hover {
+  padding: 50px;
+  border-style: none;
+  color: white;
+  animation-name: buttonhover;
+  animation-duration: 4s;
+}
 
+/*End 0' Header*/
+/*Gallery*/
 
 .flex-gallery {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-    margin: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+}
+.flex-gallery div {
+  font-size: 30px;
+}
+.flex-gallery img {
+  width: 15vw;
+  height: 15vw;
+  object-fit: cover;
+  margin: 3vw;
+}
+
+/*End 0' Gallery*/
+/*Footer*/
+
+.flex-footer {
+  display: flex;
+  background-color: darkslategray;
+  justify-content: center;
+  width: 95vw;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.flex-footer > button {
+  background-color: white;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 10px;
+}
+/*End 0' Footer*/
+
   
-.flex-gallery > div {
-    background-color: #f1f1f1;
-    margin: 50px;
-    width: 20vw;
-    height: 40vh;
-    font-size: 30px;
-  }
+  /*Tablet Code*/
+  @media only screen and (max-width: 800px) {
+    /*Header*/
+    .flex-header {
+      background-image: none;
+      margin-top:0px;
+      height: 11vw;
+      display: none;
+    }
+    .flex-header button {
+      display: none;
+    }
+    .flex-header div {
+      display: none;
+      margin-top: 5px;
+      color: black;
+    }
+    .flex-header p {
+      font-size: 3.5rem;
+    }
+    .headerWrapper .mobileHeaderDisplay {
+      display: inline;
+    }
+    .flex-header button {
+      display: none;
+    }
+    .mobileHeader {
+      display: flex;
+      justify-content: center;
+      width: 70vw;
+      height: 30vw;
+      margin: auto;
+      margin-top: 30px;
+      background-image: url("https://cdn.pling.com/img/6/0/c/8/17611381a69ce2051dcfb4205756d12decc1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+    /*End 0' Header*/
+    /*Navstuff*/
+    .flex-nav {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;      
+    }
+    .flex-nav > li {
+      background-color: darkslategray;
+      list-style: none;
+      text-align: center;
+      border-radius: 0px;
+      width: 35vw;
+      margin: 0vw;
+      border-width: .5px;
+      border-color: white;
+      border-style: solid;
+    }
+    .flex-nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .flex-nav li:hover {
+      background-color: darkslateblue;
+    }
+    /*End 0' Navstuff*/
+    
+    /*Gallery*/
+    .flex-gallery  div:nth-child(1) {
+      display: none;
+    }
+    .flex-gallery p {
+      display: none;
+    }
+    .flex-gallery {
+      width: 80%;
+      justify-content: space-evenly;
+    }
+    .flex-gallery img{
+      width: 25vw;
+      height: 25vw;
+    }
+    /*Gallery*/
 
-  .flex-header {
-    display: flex;
-    justify-content: center;
-    width: 80vw;
-    margin: auto;
-    margin-top: 30px;
-    background-image: url("https://cdn.pling.com/img/6/0/c/8/17611381a69ce2051dcfb4205756d12decc1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px;
+    .flex-nav .mobileContent{
+      display: inline;
+    }
+    .mobileContent{
+      display: inline;
+    }
+    .mobileContent h2 {
+      margin-top: 20px;
+    }
 
-  }
-
-  .flex-header > div {
-    width: 60vw;
-    height: 50vh;
-    margin-top: 20px;
-    justify-content: center;
-    text-align: center;
-    font-size: 6rem;
-    color: white;
-    align-items: center;
-  }
+    .flex-footer {
+        width: 100%;
+        margin: 0px;
+        border-radius: 0px;
+      }
+    }
   
 
-  .flex-header button {
-    background-color: white;
-    padding: 40px;
-    margin: 30px;
-    border-radius: 10px;
-  }
 
-  .flex-header button:hover {
-    background-color: darkslateblue;
-    padding: 50px;
-    border-style: none;
-    color: white;
-    font-size: 20px;
-  }
+  /*Mobile Code*/
+  @media only screen and (max-width: 500px) {
+    /*Header*/
+    .flex-header {
+      background-image: none;
+      margin-top:0px;
+      height: 11vw;
+      margin-bottom: 20px;
+    }
+    .flex-header button {
+      display: none;
+    }
+    .flex-header div {
+      display: none;
+      margin-top: 5px;
+      color: black;
+    }
+    .flex-header p {
+      font-size: 2.5rem;
+    }
+    .mobileHeader {
+      display: flex;
+      justify-content: center;
+      width: 70vw;
+      height: 30vw;
+      margin: auto;
+      margin-top: 30px;
+      background-image: url("https://cdn.pling.com/img/6/0/c/8/17611381a69ce2051dcfb4205756d12decc1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      }
+    /*End 0' Header*/
 
-  .flex-footer {
-    display: flex;
-    background-color: darkslategray;
-    justify-content: center;
-    width: 95vw;
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
+     /*Navstuff*/
+    .flex-nav {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+    }
+   .flex-nav > li {
+      background-color: darkslategray;
+      list-style: none;
+      text-align: center;
+      border-radius: 0px;
+      width: 25vw;
+      margin: 0vw;
+    } 
+    .flex-nav a {
+      color: white;
+      text-decoration: none;
+    }  
+    .flex-nav li:hover {
+      background-color: darkslateblue;
+    }
+    .flex-nav .mobileContent{
+      display: inline;
+    }
+    /*End 0' Navstuff*/
 
-  .flex-footer > button {
-    background-color: white;
-    padding: 20px;
-    margin: 30px;
-    border-radius: 10px;
+    /*Gallery*/
+
+    .flex-gallery  div:nth-child(1) {
+      display: none;
+    }
+    .flex-gallery p {
+      display: none;
+    }
+    .flex-gallery {
+      width: 80%;
+      justify-content: space-evenly;
+    }
+    .flex-gallery img{
+      width: 25vw;
+      height: 25vw;
+    }
+    /*End 0' Gallery*/
+
+    .flex-footer {
+      width: 100%;
+      margin: 0px;
+      border-radius: 0px;
+    }
+    .mobileContent{
+      display: inline;
+    }
+    
   }
